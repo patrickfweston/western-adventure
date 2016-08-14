@@ -1,0 +1,101 @@
+.hero {
+  @extend .clearfix;
+  margin-bottom: 2em;
+
+  @include breakpoint ($bp1) {
+    padding: 0;
+    margin-bottom: 4em;
+  }
+}
+
+.hero__wrapper {
+  @extend .clearfix;
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.hero__image {
+  position: relative;
+  float: right;
+  width: 100%;
+  padding-bottom: 66%;
+  background-size: cover;
+  opacity: 0.4;
+  min-height: 300px;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    background-color: $lightest;
+  }
+
+  @include breakpoint($bp1) {
+    min-height: auto;
+  }
+}
+
+.hero__text {
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  @include transform(translateY(-50%));
+  padding: 0 $gutter-width;
+  font-size: 1.25em;
+  color: $black;
+  @include transition(1.0s top ease-in-out, 0.7s opacity ease-in-out);
+
+  @include breakpoint($bp0) {
+    font-size: 1.5em;
+  }
+
+  @include breakpoint($bp1) {
+    font-size: 2em;
+  }
+
+  &.loaded {
+    opacity: 0.9;
+  }
+  
+}
+
+.hero__head {
+  position: relative;
+  top: -20px;
+  font-size: 1.1em;
+  font-weight: normal;
+  letter-spacing: -1px;
+  line-height: 0.85em;
+  margin: 0;
+  @include transition(1.0s top ease-in-out, 0.7s opacity ease-in-out);
+
+  .hero__text.loaded & {
+    top: 0;
+  }
+}
+
+.hero__subhead {
+  position: relative;
+  left: -20px;
+  font-size: 2.5em;
+  font-family: Bangers;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 0.1em;
+  font-weight: normal;
+  line-height: 0.9em;
+  @include transition(1.0s left ease-in-out, 0.7s opacity ease-in-out);
+
+  .hero__text.loaded & {
+    left: 0;
+  }
+
+  @include breakpoint($bp0) {
+    font-size: 3.5em;
+  }
+}

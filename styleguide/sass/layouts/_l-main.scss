@@ -1,0 +1,8 @@
+.l-main {
+  max-width: $max-width;
+  margin: $gutter-width;
+
+  @include breakpoint($bp2) {
+    margin: $gutter-width * 2 auto;
+  }
+}

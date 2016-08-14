@@ -1,0 +1,72 @@
+.image {
+  @extend .clearfix;
+}
+
+.image--single {
+  
+}
+
+.image__caption {
+  @include box-sizing(border-box);
+  color: $light;
+  font-size: 0.8em;
+  line-height: 1.5em;
+
+  @include breakpoint($bp0) {
+    position: absolute;
+    bottom: 4em;
+  }
+
+  .image--single & {
+    width: 100%;
+    
+    @include breakpoint($bp0) {
+      width: 33.333%;
+    }
+  }
+
+  .image--left & {
+    padding-top: 1em;
+
+    @include breakpoint($bp0) {
+      right: 0;
+      padding-left: 1em;
+      text-align: left;
+    }
+  }
+
+  .image--right & {
+    padding-top: 1em;
+
+
+    @include breakpoint($bp0) {
+      left: 0;
+      padding-right: 1em;
+      text-align: right;
+    }
+  }
+}
+
+.image__image {
+  @include box-sizing(border-box);
+
+  .image--single & {
+    width: 100%;
+
+    @include breakpoint($bp0) {
+      width: 66.666%;
+    }
+  }
+
+  .image--left & {
+    @include breakpoint($bp0) {
+      float: left;
+    }
+  }
+
+  .image--right & {
+    @include breakpoint($bp0) {
+      float: right;
+    }
+  }
+}

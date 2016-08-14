@@ -1,0 +1,25 @@
+.transition {
+  @extend .clearfix;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 66%;
+  text-align: center;
+}
+
+.transition__wrapper {
+  display: inline-block;
+}
+
+.transition__item {
+  float: left;
+  display: inline-block;
+  height: 100px;
+  max-width: 33.33%;
+  margin: 0 $gutter-width;
+  text-align: center;
+}
+
+.transition__divider {
+  
+}

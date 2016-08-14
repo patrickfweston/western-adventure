@@ -1,0 +1,101 @@
+// Breakpoints
+$bp0: 600px;
+$bp1: 750px;
+$bp2: 900px;
+$bp3: 1100px;
+
+// Other variables
+$base-font-size: 18px;
+$gutter-width: $base-font-size;
+$max-width: $bp2 - $gutter-width * 2;
+
+// Colors
+$lightest-gray: #dddddd;
+$black: darken(#ABA196, 45%);
+$true-black: #000000;
+
+$lightest: #ABA196;
+$light: darken($lightest, 10%);
+
+
+html, body {
+  font-family: Karla, Helvetica, Arial, sans-serif;
+  font-size: $base-font-size;
+  line-height: 1.611em;
+  color: $black;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+h2 {
+  margin-bottom: 0.5em;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+h3 {
+  position: relative;
+  padding-bottom: 0.75em;
+  margin-bottom: 0.5em;
+  font-size: 1.75em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1em;
+  color: $black;
+
+  @include breakpoint($bp0) {
+    padding-right: 185px;
+    padding-bottom: 0;
+  }
+
+  &:after {
+    @include box-sizing(border-box);
+    content: " ";
+    position: absolute;
+    bottom: -0.25em;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    padding-left: 1em;
+    background-color: $lightest;
+  }
+}
+
+h4 {
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+h5 {
+  margin-bottom: 0.5em;
+  font-size: 1.33em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+h6 {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1em;
+}
+
+p {
+  margin-top: 1em;
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: -0.5px;
+}

@@ -1,0 +1,22 @@
+@mixin breakpoint($radius) {
+  @media (min-width: $radius) {
+    @content
+  }
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+  }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
