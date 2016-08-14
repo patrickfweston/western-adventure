@@ -1,0 +1,11 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/styles.css: {}
+      'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700,700i|Roboto+Slab:100,300,400,700': { type: external }
+  js:
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

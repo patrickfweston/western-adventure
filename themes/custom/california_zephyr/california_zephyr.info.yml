@@ -1,0 +1,12 @@
+name: California Zephyr
+type: theme
+description: A Western inspired Drupal theme
+package: Other
+core: 8.x
+libraries:
+  - california_zephyr/global-styling
+
+base theme: false
+
+regions:
+  content: Content
