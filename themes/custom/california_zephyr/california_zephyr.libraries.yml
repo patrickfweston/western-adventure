@@ -1,0 +1,11 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/screen.css: {}
+      'https://fonts.googleapis.com/css?family=Karla:400,400italic,700|Bangers': { type: external }
+  js:
+    js/scripts.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
