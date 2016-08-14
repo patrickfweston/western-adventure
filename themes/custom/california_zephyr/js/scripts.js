@@ -1,1 +1,1 @@
-console.log('ello');
+../western-adventure/js/scripts.js
