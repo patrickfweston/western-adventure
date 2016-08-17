@@ -15,7 +15,9 @@
   position: absolute;
   left: 0;
   bottom: -0.5em;
+  font-family: $lora;
   font-size: 0.8em;
+  font-style: italic;
   color: #ABA196;
 
   @include breakpoint ($bp0) {

@@ -1,9 +1,13 @@
 .hero {
   @extend .clearfix;
+  position: relative;
+  padding: $gutter-width 0;
   margin-bottom: 2em;
+  margin-left: $gutter-width;
+  margin-right: $gutter-width;
 
   @include breakpoint ($bp1) {
-    padding: 0;
+    padding: 3em 0;
     margin-bottom: 4em;
   }
 }
@@ -17,12 +21,15 @@
 
 .hero__image {
   position: relative;
-  float: right;
+  float: none;
   width: 100%;
+  max-width: $bp3;
+  margin: 0 auto;
   padding-bottom: 66%;
   background-size: cover;
-  opacity: 0.4;
+  opacity: 0.6;
   min-height: 300px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
 
   &:after {
     content: " ";
@@ -41,8 +48,14 @@
 }
 
 .hero__text {
+  @include box-sizing(border-box);
   position: absolute;
   top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: $bp3;
   opacity: 0;
   @include transform(translateY(-50%));
   padding: 0 $gutter-width;
@@ -52,10 +65,12 @@
 
   @include breakpoint($bp0) {
     font-size: 1.5em;
+    left: 30px;
   }
 
   @include breakpoint($bp1) {
     font-size: 2em;
+    left: 100px;
   }
 
   &.loaded {

@@ -1,25 +1,102 @@
 .transition {
   @extend .clearfix;
   position: relative;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width: 66%;
   text-align: center;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    background-color: $lightest;
+    visibility: visible;
+  }
+
+  @include breakpoint($bp1) {
+    margin-bottom: 8.5em;
+  }
 }
 
 .transition__wrapper {
+  @include box-sizing(border-box);
   display: inline-block;
+  padding: 0 10px;
+  background-color: $white;
 }
 
 .transition__item {
-  float: left;
+  position: relative;
   display: inline-block;
-  height: 100px;
-  max-width: 33.33%;
-  margin: 0 $gutter-width;
+  float: left;
+  height: 75px;
+  width: 75px;
+  margin: 0 $gutter-width / 2;
   text-align: center;
+
+  svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
+  svg path {
+    fill: $black;
+  }
+
+  @include breakpoint($bp1) {
+    height: 100px;
+    width: 100px;
+    margin: 0 $gutter-width;
+  }
 }
 
 .transition__divider {
-  
+  width: 20px;
+
+  @include breakpoint($bp1) {
+    width: 30px;
+  }
+
+  svg path {
+    fill: $lightest;
+  }
+}
+
+.transition__meta {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  display: block;
+  clear: both;
+  margin: 0 auto;
+  font-family: $lora;
+  font-size: 0.7em;
+  font-style: italic;
+  color: $lightest;
+}
+
+.transition__start,
+.transition__end {
+  &:after {
+    content: attr(data-abbreviation);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    @include transform(translateY(-50%));
+    font-size: 0.9em;
+    font-family: $karla;
+    color: $lightest;
+  }
 }

@@ -17,9 +17,14 @@ $true-black: #000000;
 $lightest: #ABA196;
 $light: darken($lightest, 10%);
 
+$white: #fff;
+
+// Font stacks
+$lora: Lora, Georgia, serif;
+$karla: Karla, Helvetica, Arial, sans-serif;
 
 html, body {
-  font-family: Karla, Helvetica, Arial, sans-serif;
+  font-family: $karla;
   font-size: $base-font-size;
   line-height: 1.611em;
   color: $black;
@@ -44,7 +49,7 @@ h2 {
 h3 {
   position: relative;
   padding-bottom: 0.75em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
   font-size: 1.75em;
   font-weight: bold;
   letter-spacing: -1px;
@@ -94,8 +99,14 @@ h6 {
 }
 
 p {
-  margin-top: 1em;
+  margin-top: 0;
+  font-family: Lora;
+  color: $black;
   font-size: 1em;
-  line-height: 1.5em;
-  letter-spacing: -0.5px;
+  line-height: 1.75em;
+  -webkit-font-smoothing: antialiased;
+}
+
+p + p {
+  margin-top: 1.75em;
 }
