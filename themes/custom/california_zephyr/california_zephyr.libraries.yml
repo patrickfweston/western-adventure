@@ -3,7 +3,7 @@ global-styling:
   css:
     theme:
       css/screen.css: {}
-      'https://fonts.googleapis.com/css?family=Karla:400,400italic,700|Bangers': { type: external }
+      'https://fonts.googleapis.com/css?family=Karla:400,400italic,700|Bangers|Lora:400,400italic': { type: external }
   js:
     js/scripts.js: {}
   dependencies:

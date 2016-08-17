@@ -1,13 +1,16 @@
 <div class="post transition">
   <div class="transition__wrapper">
-    <div class="transition__item transition__start">
-      <img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=100%C3%97100&w=100&h=100" />
+    <div class="transition__item transition__start" data-abbreviation="{{ content.field_state_start|e|striptags|trim }}">
+    {{ include (base_path ~ directory ~ '/images/states/' ~ content.field_state_start|e|striptags|trim|lower ~ '.svg') }}
+      <!-- <img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=100%C3%97100&w=100&h=100" /> -->
     </div>
     <div class="transition__item transition__divider">
-      ->
+      {{ include (base_path ~ directory ~ '/images/transportation/' ~ content.field_transportation|e|striptags|trim|lower  ~ '.svg') }}
     </div>
-    <div class="transition__item transition__end">
-      <img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=100%C3%97100&w=100&h=100" />
+    <div class="transition__item transition__end" data-abbreviation="{{ content.field_state_end|e|striptags|trim }}">
+      <!-- <img src="https://placeholdit.imgix.net/~text?txtsize=15&txt=100%C3%97100&w=100&h=100" /> -->
+      {{ include (base_path ~ directory ~ '/images/states/' ~ content.field_state_end|e|striptags|trim|lower  ~ '.svg') }}
     </div>
+    <span class="transition__meta">{{ content.field_display_date }}</span>
   </div>
 </div>
